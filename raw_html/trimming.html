@@ -1,0 +1,220 @@
+<!DOCTYPE html>
+
+<html class="light" lang="en"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>VibeTrim - Sonic Precision Audio Trimming</title>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800;900&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<script id="tailwind-config">
+      tailwind.config = {
+        darkMode: "class",
+        theme: {
+          extend: {
+            colors: {
+              "primary": "#FF4D00",
+              "primary-variant": "#E64500",
+              "secondary": "#FF1F00",
+              "background": "#ffffff",
+              "surface": "#f8f9fa",
+              "on-background": "#000000",
+              "on-surface": "#191c1d",
+              "outline": "#7e7576",
+              "outline-variant": "#cfc4c5",
+            },
+            fontFamily: {
+              "headline": ["Inter"],
+              "body": ["Inter"],
+              "label": ["Inter"]
+            },
+            borderRadius: {
+              "DEFAULT": "0.5rem",
+              "lg": "0.5rem",
+              "xl": "0.75rem",
+              "full": "9999px"
+            },
+          },
+        },
+      }
+    </script>
+<style>
+        .material-symbols-outlined {
+            font-variation-settings: 'FILL' 0, 'wght' 400, 'GRAD' 0, 'opsz' 24;
+            display: inline-block;
+            line-height: 1;
+            text-transform: none;
+            letter-spacing: normal;
+            word-wrap: normal;
+            white-space: nowrap;
+            direction: ltr;
+        }
+        .custom-scrollbar::-webkit-scrollbar {
+            width: 4px;
+        }
+        .custom-scrollbar::-webkit-scrollbar-track {
+            background: transparent;
+        }
+        .custom-scrollbar::-webkit-scrollbar-thumb {
+            background: linear-gradient(to bottom, #FF4D00, #FF1F00);
+            border-radius: 10px;
+        }
+        .gradient-brand {
+            background: linear-gradient(135deg, #FF4D00 0%, #FF1F00 100%);
+        }
+        .text-gradient-brand {
+            background: linear-gradient(135deg, #FF4D00 0%, #FF1F00 100%);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+        }
+    </style>
+<style>
+        body {
+            min-height: max(884px, 100dvh);
+        }
+    </style>
+</head>
+<body class="bg-background font-body text-on-background min-h-screen flex flex-col">
+<!-- Header Section -->
+<header class="fixed top-0 w-full z-50 flex justify-between items-center px-6 py-4 max-w-full bg-white border-b border-neutral-100 font-sans antialiased tracking-tight">
+<div class="text-2xl font-black flex items-center gap-2 italic">
+<span class="material-symbols-outlined text-primary" data-icon="graphic_eq">graphic_eq</span>
+<span class="text-on-background">VibeTrim</span>
+</div>
+<nav class="hidden md:flex items-center gap-8">
+<a class="text-neutral-500 hover:text-primary transition-colors duration-300 font-medium" href="#">FAQs</a>
+<a class="text-neutral-500 hover:text-primary transition-colors duration-300 font-medium" href="#">Changelog</a>
+<a class="text-neutral-500 hover:text-primary transition-colors duration-300 font-medium" href="#">Contact</a>
+</nav>
+<div class="flex items-center gap-4">
+<button class="material-symbols-outlined text-on-background hover:bg-neutral-100 p-2 rounded-lg transition-all duration-300" data-icon="menu">menu</button>
+</div>
+</header>
+<!-- Background Content (Dimmed Converter Screen) -->
+<main class="flex-grow pt-24 pb-12 px-6 opacity-30 blur-sm pointer-events-none overflow-hidden">
+<div class="max-w-4xl mx-auto space-y-10">
+<div class="space-y-4 text-center">
+<h1 class="text-5xl md:text-7xl font-headline font-black tracking-tight leading-none uppercase">The Sonic Slipstream</h1>
+<p class="text-lg text-neutral-600 max-w-xl mx-auto">Surgical precision audio trimming with premium quality output.</p>
+</div>
+<div class="bg-surface rounded-xl p-10 shadow-sm border border-outline-variant/30">
+<div class="flex flex-col items-center justify-center border-2 border-dashed border-outline-variant rounded-xl py-24 space-y-4 bg-white">
+<span class="material-symbols-outlined text-5xl text-outline" data-icon="upload_file">upload_file</span>
+<p class="font-label tracking-widest text-sm uppercase">Drop your files here</p>
+<button class="gradient-brand text-white px-8 py-3 rounded-lg font-bold transition-transform">Select File</button>
+</div>
+</div>
+</div>
+</main>
+<!-- Modal Overlay -->
+<div class="fixed inset-0 z-[100] flex items-center justify-center px-4 md:px-6">
+<!-- Backdrop -->
+<div class="absolute inset-0 bg-neutral-900/60 backdrop-blur-sm"></div>
+<!-- Modal Container -->
+<div class="relative w-full max-w-2xl bg-white rounded-lg shadow-2xl overflow-hidden flex flex-col max-h-[795px] border border-white/10">
+<!-- Modal Header -->
+<div class="px-8 py-6 flex items-center justify-between border-b border-neutral-100">
+<div class="flex items-center gap-3">
+<div class="w-10 h-10 bg-primary/10 flex items-center justify-center rounded-lg">
+<span class="material-symbols-outlined text-primary" data-icon="content_cut">content_cut</span>
+</div>
+<h2 class="text-2xl font-headline font-bold tracking-tight">Trim Audio</h2>
+</div>
+<button class="text-neutral-400 hover:text-on-background transition-colors p-2 rounded-lg hover:bg-neutral-50">
+<span class="material-symbols-outlined" data-icon="close">close</span>
+</button>
+</div>
+<!-- Modal Content -->
+<div class="flex-grow overflow-y-auto custom-scrollbar px-8 py-8 space-y-10">
+<!-- Audio Waveform Visualization -->
+<div class="relative space-y-4">
+<div class="h-32 w-full bg-neutral-50 rounded-lg flex items-end justify-center gap-[2px] p-2 overflow-hidden">
+<!-- Simulated Waveform -->
+<div class="w-1 h-8 bg-neutral-200 rounded-full"></div>
+<div class="w-1 h-12 bg-neutral-200 rounded-full"></div>
+<div class="w-1 h-16 bg-neutral-200 rounded-full"></div>
+<div class="w-1 h-10 bg-neutral-200 rounded-full"></div>
+<div class="w-1 h-20 bg-neutral-200 rounded-full"></div>
+<!-- Active Region -->
+<div class="w-1 h-24 bg-primary rounded-full"></div>
+<div class="w-1 h-20 bg-primary rounded-full"></div>
+<div class="w-1 h-28 bg-primary rounded-full"></div>
+<div class="w-1 h-22 bg-secondary rounded-full"></div>
+<div class="w-1 h-18 bg-secondary rounded-full"></div>
+<div class="w-1 h-24 bg-primary rounded-full"></div>
+<div class="w-1 h-12 bg-primary rounded-full"></div>
+<div class="w-1 h-26 bg-primary rounded-full"></div>
+<div class="w-1 h-30 bg-primary rounded-full"></div>
+<div class="w-1 h-20 bg-secondary rounded-full"></div>
+<div class="w-1 h-24 bg-secondary rounded-full"></div>
+<div class="w-1 h-16 bg-primary rounded-full"></div>
+<!-- End Active Region -->
+<div class="w-1 h-12 bg-neutral-200 rounded-full"></div>
+<div class="w-1 h-18 bg-neutral-200 rounded-full"></div>
+<div class="w-1 h-8 bg-neutral-200 rounded-full"></div>
+<div class="w-1 h-14 bg-neutral-200 rounded-full"></div>
+<div class="w-1 h-22 bg-neutral-200 rounded-full"></div>
+</div>
+<!-- Dual Handle Slider -->
+<div class="relative w-full h-2 bg-neutral-100 rounded-full">
+<div class="absolute left-1/4 right-1/4 h-full gradient-brand rounded-full"></div>
+<!-- Handles -->
+<div class="absolute left-1/4 top-1/2 -translate-y-1/2 -translate-x-1/2 w-6 h-6 bg-white border-4 border-primary rounded-full shadow-lg cursor-pointer"></div>
+<div class="absolute right-1/4 top-1/2 -translate-y-1/2 translate-x-1/2 w-6 h-6 bg-white border-4 border-secondary rounded-full shadow-lg cursor-pointer"></div>
+</div>
+<div class="flex justify-between text-[10px] font-label tracking-widest text-neutral-400 uppercase font-bold">
+<span>00:00:00</span>
+<span class="text-on-background">Selection: 03:45</span>
+<span>05:12:30</span>
+</div>
+</div>
+<!-- Precise Input Fields -->
+<div class="grid grid-cols-1 md:grid-cols-2 gap-8">
+<div class="space-y-3">
+<label class="block text-xs font-label tracking-widest text-neutral-500 uppercase font-bold">Start Time</label>
+<div class="relative group">
+<span class="absolute left-4 top-1/2 -translate-y-1/2 material-symbols-outlined text-neutral-400 group-focus-within:text-primary transition-colors" data-icon="timer">timer</span>
+<input class="w-full bg-neutral-50 border-neutral-100 rounded-lg py-4 pl-12 pr-4 text-on-surface focus:ring-2 focus:ring-primary/20 focus:border-primary transition-all font-mono font-bold" type="text" value="00:01:12"/>
+</div>
+</div>
+<div class="space-y-3">
+<label class="block text-xs font-label tracking-widest text-neutral-500 uppercase font-bold">End Time</label>
+<div class="relative group">
+<span class="absolute left-4 top-1/2 -translate-y-1/2 material-symbols-outlined text-neutral-400 group-focus-within:text-secondary transition-colors" data-icon="timer_off">timer_off</span>
+<input class="w-full bg-neutral-50 border-neutral-100 rounded-lg py-4 pl-12 pr-4 text-on-surface focus:ring-2 focus:ring-secondary/20 focus:border-secondary transition-all font-mono font-bold" type="text" value="00:04:57"/>
+</div>
+</div>
+</div>
+<!-- Selection Info -->
+<div class="bg-neutral-50 p-4 rounded-lg flex items-center justify-between border border-neutral-100">
+<div class="flex items-center gap-3">
+<span class="material-symbols-outlined text-primary" data-icon="info" style="font-variation-settings: 'FILL' 1;">info</span>
+<p class="text-sm font-medium text-neutral-700">Selected duration will be processed as a new clip.</p>
+</div>
+<span class="text-lg font-bold text-primary">03:45</span>
+</div>
+</div>
+<!-- Modal Footer -->
+<div class="px-8 py-6 bg-white flex flex-col-reverse md:flex-row gap-4 justify-end border-t border-neutral-100">
+<button class="px-8 py-3 rounded-lg font-bold text-neutral-600 hover:bg-neutral-50 transition-colors tracking-tight">
+                    Cancel
+                </button>
+<button class="px-10 py-3 gradient-brand text-white rounded-lg font-bold shadow-lg shadow-primary/20 hover:opacity-90 transition-all active:scale-95 tracking-tight flex items-center justify-center gap-2">
+<span class="material-symbols-outlined text-sm" data-icon="save">save</span>
+                    Save Clip
+                </button>
+</div>
+</div>
+</div>
+<!-- Footer Section -->
+<footer class="w-full mt-auto flex flex-col md:flex-row justify-between items-center px-10 py-12 border-t border-neutral-100 bg-white">
+<div class="text-sm font-medium leading-relaxed text-neutral-400 mb-6 md:mb-0 uppercase tracking-widest">
+            © 2024 VibeTrim. The Sonic Slipstream.
+        </div>
+<div class="flex gap-8">
+<a class="text-sm font-semibold leading-relaxed text-neutral-400 hover:text-primary underline underline-offset-4" href="#">Privacy</a>
+<a class="text-sm font-semibold leading-relaxed text-neutral-400 hover:text-primary underline underline-offset-4" href="#">Terms</a>
+<a class="text-sm font-black leading-relaxed text-primary hover:text-secondary underline underline-offset-4" href="#">API</a>
+</div>
+</footer>
+</body></html>

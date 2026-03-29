@@ -1,0 +1,276 @@
+<!DOCTYPE html>
+
+<html class="light" lang="en"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>VibeTrim - Success! Your MP3 is Ready</title>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@100;300;400;500;600;700;800;900&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<script id="tailwind-config">
+      tailwind.config = {
+        darkMode: "class",
+        theme: {
+          extend: {
+            colors: {
+              "on-secondary": "#ffffff",
+              "secondary": "#FF4D00",
+              "primary-fixed": "#FFDBCF",
+              "background": "#F6F6F8",
+              "primary-container": "#0C0E10",
+              "inverse-on-surface": "#F0F1F2",
+              "tertiary": "#B31E00",
+              "tertiary-container": "#FFDAD4",
+              "on-secondary-fixed-variant": "#B31E00",
+              "error-container": "#ffdad6",
+              "secondary-fixed": "#ffdad4",
+              "inverse-primary": "#FFB4A1",
+              "on-error-container": "#93000a",
+              "secondary-container": "#FF4D00",
+              "on-tertiary-fixed-variant": "#3D0700",
+              "surface-container-high": "#E7E8EA",
+              "on-primary": "#ffffff",
+              "on-primary-container": "#ACADAF",
+              "on-tertiary": "#ffffff",
+              "surface-variant": "#E1E3E4",
+              "secondary-fixed-dim": "#ffb4a8",
+              "on-error": "#ffffff",
+              "on-surface": "#0C0E10",
+              "error": "#ba1a1a",
+              "inverse-surface": "#2D2F31",
+              "on-secondary-container": "#ffffff",
+              "on-secondary-fixed": "#410000",
+              "surface-dim": "#D9DADB",
+              "surface-container-low": "#F3F4F5",
+              "surface-container-highest": "#E1E3E4",
+              "on-background": "#0C0E10",
+              "surface-container": "#EDEEEF",
+              "on-tertiary-container": "#B31E00",
+              "primary-fixed-dim": "#FFB4A1",
+              "surface-tint": "#FF4D00",
+              "surface": "#F6F6F8",
+              "tertiary-fixed-dim": "#FFB4A1",
+              "on-primary-fixed-variant": "#5A5C5D",
+              "on-tertiary-fixed": "#3D0700",
+              "surface-bright": "#F6F6F8",
+              "on-surface-variant": "#5A5C5D",
+              "tertiary-fixed": "#FFDAD4",
+              "outline-variant": "#ACADAF",
+              "primary": "#FF4D00",
+              "surface-container-lowest": "#ffffff",
+              "outline": "#5A5C5D",
+              "on-primary-fixed": "#0C0E10"
+            },
+            fontFamily: {
+              "headline": ["Inter"],
+              "body": ["Inter"],
+              "label": ["Inter"]
+            },
+            borderRadius: {"DEFAULT": "0.5rem", "lg": "1rem", "xl": "1.5rem", "full": "9999px"},
+          },
+        },
+      }
+    </script>
+<style>
+        .material-symbols-outlined {
+            font-variation-settings: 'FILL' 0, 'wght' 400, 'GRAD' 0, 'opsz' 24;
+            display: inline-block;
+            line-height: 1;
+            text-transform: none;
+            letter-spacing: normal;
+            word-wrap: normal;
+            white-space: nowrap;
+            direction: ltr;
+        }
+        .glass-card {
+            background: rgba(255, 255, 255, 0.7);
+            backdrop-filter: blur(12px);
+            -webkit-backdrop-filter: blur(12px);
+        }
+        .vibe-gradient {
+            background: linear-gradient(to right, #B31E00, #FF775C);
+        }
+        .vibe-text-gradient {
+            background: linear-gradient(to right, #B31E00, #FF775C);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+        }
+    </style>
+</head>
+<body class="bg-background font-body text-on-surface min-h-screen flex flex-col">
+<!-- TopAppBar Component -->
+<header class="bg-[#0C0E10] dark:bg-[#0C0E10] docked full-width top-0 sticky z-50 shadow-[0_20px_40px_rgba(12,14,16,0.04)]">
+<div class="flex justify-between items-center w-full px-6 py-4 max-w-full">
+<div class="text-xl font-black vibe-text-gradient uppercase flex items-center gap-2">
+<span class="material-symbols-outlined text-[#FF4D00]" data-icon="waves">waves</span>
+                VibeTrim
+            </div>
+<nav class="hidden md:flex gap-8 items-center">
+<a class="text-[#FF4D00] font-bold border-b-2 border-[#FF4D00] text-sm uppercase tracking-widest" href="#">YouTube to MP3</a>
+<a class="text-[#ACADAF] font-medium hover:text-[#FF775C] transition-colors duration-300 text-sm uppercase tracking-widest" href="#">VibeMP4</a>
+<a class="text-[#ACADAF] font-medium hover:text-[#FF775C] transition-colors duration-300 text-sm uppercase tracking-widest" href="#">FAQs</a>
+</nav>
+<div class="flex items-center gap-4">
+<button class="text-[#ACADAF] hover:text-[#FF775C] transition-colors duration-300 material-symbols-outlined" data-icon="search">search</button>
+<button class="text-[#ACADAF] hover:text-[#FF775C] transition-colors duration-300 material-symbols-outlined" data-icon="menu">menu</button>
+</div>
+</div>
+</header>
+<main class="flex-grow pt-16 pb-12 px-4 md:px-10 max-w-7xl mx-auto w-full">
+<!-- Hero State Banner -->
+<section class="mb-12 text-center pt-8">
+<h1 class="text-4xl md:text-6xl font-black tracking-tighter mb-4 text-on-surface">
+                Conversion Complete.
+            </h1>
+<p class="text-on-surface-variant max-w-2xl mx-auto text-lg leading-relaxed">
+                Your audio has been processed with high-fidelity encoding. It's ready for your local library.
+            </p>
+</section>
+<!-- Main Converter Section -->
+<div class="grid grid-cols-1 md:grid-cols-12 gap-6 items-start">
+<!-- Success Card -->
+<div class="md:col-span-8 bg-surface-container-lowest rounded-xl p-8 shadow-sm border border-outline-variant/10">
+<div class="flex flex-col items-center py-6">
+<!-- Success Visual -->
+<div class="w-20 h-20 bg-primary/10 rounded-full flex items-center justify-center mb-6">
+<span class="material-symbols-outlined text-primary text-4xl" data-icon="check_circle" style="font-variation-settings: 'FILL' 1;">check_circle</span>
+</div>
+<h2 class="text-2xl font-bold mb-2">Successfully converted!</h2>
+<p class="text-outline text-sm mb-8 font-label tracking-widest uppercase">320KBPS • 4.2 MB • MP3</p>
+<!-- Waveform Fill Representation -->
+<div class="w-full h-12 bg-surface-container flex items-center gap-1 px-4 rounded-lg mb-10 overflow-hidden">
+<div class="h-6 w-1 vibe-gradient rounded-full"></div>
+<div class="h-8 w-1 vibe-gradient rounded-full"></div>
+<div class="h-4 w-1 vibe-gradient rounded-full"></div>
+<div class="h-10 w-1 vibe-gradient rounded-full"></div>
+<div class="h-6 w-1 vibe-gradient rounded-full"></div>
+<div class="h-8 w-1 vibe-gradient rounded-full"></div>
+<div class="h-5 w-1 vibe-gradient rounded-full"></div>
+<div class="h-9 w-1 vibe-gradient rounded-full"></div>
+<div class="h-7 w-1 vibe-gradient rounded-full"></div>
+<div class="h-3 w-1 vibe-gradient rounded-full"></div>
+<div class="h-8 w-1 vibe-gradient rounded-full"></div>
+<div class="h-10 w-1 vibe-gradient rounded-full"></div>
+<div class="h-6 w-1 vibe-gradient rounded-full"></div>
+<div class="h-8 w-1 vibe-gradient rounded-full"></div>
+<div class="h-4 w-1 vibe-gradient rounded-full"></div>
+<div class="h-10 w-1 vibe-gradient rounded-full"></div>
+<div class="h-6 w-1 vibe-gradient rounded-full"></div>
+</div>
+<div class="flex flex-col sm:flex-row gap-4 w-full">
+<button class="flex-1 vibe-gradient text-white py-4 px-8 rounded-lg font-bold flex items-center justify-center gap-2 hover:opacity-90 transition-all active:scale-95 duration-200">
+<span class="material-symbols-outlined" data-icon="download">download</span>
+                            Download MP3
+                        </button>
+<button class="flex-1 bg-surface-container-high text-on-surface py-4 px-8 rounded-lg font-semibold flex items-center justify-center gap-2 hover:bg-surface-dim transition-all active:scale-95 duration-200">
+<span class="material-symbols-outlined" data-icon="refresh">refresh</span>
+                            Convert Next
+                        </button>
+</div>
+</div>
+</div>
+<!-- Support CTAs Section -->
+<div class="md:col-span-4 flex flex-col gap-6">
+<!-- Coffee Tip -->
+<div class="bg-surface-container-low rounded-xl p-6 border border-outline-variant/10">
+<h3 class="font-bold text-lg mb-4 flex items-center gap-2">
+<span class="material-symbols-outlined text-primary" data-icon="favorite">favorite</span>
+                        Keep VibeTrim Free
+                    </h3>
+<p class="text-sm text-on-surface-variant mb-6 leading-relaxed">
+                        We don't show ads to ensure the best experience. Consider supporting our servers.
+                    </p>
+<button class="w-full glass-card py-3 px-4 rounded-lg flex items-center justify-between hover:bg-white/80 transition-all border border-white/50 shadow-sm">
+<div class="flex items-center gap-3">
+<span class="material-symbols-outlined text-amber-800" data-icon="coffee">coffee</span>
+<span class="font-semibold">Buy me a Coffee</span>
+</div>
+<span class="material-symbols-outlined text-sm" data-icon="arrow_forward">arrow_forward</span>
+</button>
+</div>
+<!-- Crypto Donation -->
+<div class="bg-[#0C0E10] text-white rounded-xl p-6 shadow-xl">
+<div class="flex justify-between items-start mb-4">
+<span class="material-symbols-outlined text-[#FF4D00] text-3xl" data-icon="currency_bitcoin">currency_bitcoin</span>
+<span class="text-[10px] font-label tracking-widest opacity-50">SECURE NODE</span>
+</div>
+<h3 class="font-bold mb-2">Donate via crypto</h3>
+<p class="text-xs text-[#ACADAF] mb-6">Support decentralized tools.</p>
+<button class="w-full bg-white/10 hover:bg-white/20 py-2 rounded-lg text-sm font-medium transition-colors">
+                        Copy Wallet Address
+                    </button>
+</div>
+</div>
+</div>
+<!-- Quick Actions & Instructions -->
+<section class="mt-20">
+<div class="grid grid-cols-1 md:grid-cols-3 gap-12">
+<div>
+<span class="material-symbols-outlined text-primary mb-4" data-icon="content_cut">content_cut</span>
+<h4 class="font-bold mb-2">Trim on the fly</h4>
+<p class="text-sm text-on-surface-variant">Use our built-in editor to cut silence or intro music from your downloaded tracks before saving.</p>
+</div>
+<div>
+<span class="material-symbols-outlined text-primary mb-4" data-icon="high_quality">high_quality</span>
+<h4 class="font-bold mb-2">Lossless Conversion</h4>
+<p class="text-sm text-on-surface-variant">We preserve the highest original bitrate available from the source for pristine audio quality.</p>
+</div>
+<div>
+<span class="material-symbols-outlined text-primary mb-4" data-icon="shield_check">shield</span>
+<h4 class="font-bold mb-2">Safe &amp; Ad-Free</h4>
+<p class="text-sm text-on-surface-variant">No popups, no redirects. Just pure utility for the digital curator who values their time.</p>
+</div>
+</div>
+</section>
+<!-- Aesthetic Visual Break -->
+<section class="mt-20 h-64 rounded-xl overflow-hidden relative group">
+<img alt="abstract music visualizer" class="w-full h-full object-cover grayscale opacity-20 group-hover:opacity-30 transition-opacity duration-700" src="https://lh3.googleusercontent.com/aida-public/AB6AXuDYefLUpavBLCj8n3Jz5HRWWb2JuO2lY9__NuKEF1JkC8GwqCoDdapHfUUq7bn8E5KPSvmD8KWSstoFPjAU0fn8msMtVLlp15D3aXiijciDyXgl2H8TkflEA3qpKUuxVHghUsi3Bmw8sz94PtryII_K8nnOI8NHK8k9auSENIivEmg4Z0N4MLHP6St3C6Ac0nVyVmoJv6uTst8YkZtQuY7FAvTYkoT_yWKb8S1ZEURS6vu67Z-_l4JCAzOzvLhpffO7f3V0etnYYBNx"/>
+<div class="absolute inset-0 bg-gradient-to-t from-background to-transparent"></div>
+<div class="absolute inset-0 flex flex-col justify-end p-10">
+<span class="text-xs font-label tracking-[0.3em] vibe-text-gradient mb-2 uppercase font-bold">Next Generation Utility</span>
+<h3 class="text-2xl font-black italic">The Digital Curator.</h3>
+</div>
+</section>
+</main>
+<!-- Footer Component -->
+<footer class="bg-[#F6F6F8] dark:bg-[#0C0E10] w-full pt-12 pb-24 px-6">
+<div class="max-w-7xl mx-auto flex flex-col md:flex-row justify-between items-center gap-4 border-t border-[#ACADAF]/10 pt-8">
+<div class="text-[#5A5C5D] font-['Inter'] text-xs font-medium">
+                © 2024 <span class="font-black text-[#FF4D00]">VibeTrim</span>. Kinetic Precision.
+            </div>
+<div class="flex gap-8">
+<a class="text-[#5A5C5D] hover:text-[#2D2F31] font-['Inter'] text-xs font-medium transition-opacity hover:opacity-80" href="#">Privacy Policy</a>
+<a class="text-[#5A5C5D] hover:text-[#2D2F31] font-['Inter'] text-xs font-medium transition-opacity hover:opacity-80" href="#">Terms of Service</a>
+<a class="text-[#B31E00] font-['Inter'] text-xs font-medium underline transition-opacity hover:opacity-80" href="#">Buy me a coffee</a>
+</div>
+</div>
+</footer>
+<!-- BottomNavBar Component for Mobile -->
+<nav class="md:hidden fixed bottom-0 left-0 w-full z-50 bg-[#F6F6F8]/80 dark:bg-[#0C0E10]/80 backdrop-blur-xl border-t border-[#ACADAF]/15 flex justify-around items-center px-4 py-3 shadow-[0_-10px_30px_rgba(0,0,0,0.05)] rounded-t-2xl">
+<div class="flex flex-col items-center justify-center text-[#5A5C5D] dark:text-[#ACADAF] active:scale-90 transition-all duration-150">
+<span class="material-symbols-outlined text-xl" data-icon="help_outline">help_outline</span>
+<span class="font-['Inter'] text-[10px] font-bold uppercase tracking-[0.05em] mt-1">FAQs</span>
+</div>
+<div class="flex flex-col items-center justify-center text-[#5A5C5D] dark:text-[#ACADAF] active:scale-90 transition-all duration-150">
+<span class="material-symbols-outlined text-xl" data-icon="history_edu">history_edu</span>
+<span class="font-['Inter'] text-[10px] font-bold uppercase tracking-[0.05em] mt-1">Changelog</span>
+</div>
+<div class="flex flex-col items-center justify-center text-[#5A5C5D] dark:text-[#ACADAF] active:scale-90 transition-all duration-150">
+<span class="material-symbols-outlined text-xl" data-icon="mail">mail</span>
+<span class="font-['Inter'] text-[10px] font-bold uppercase tracking-[0.05em] mt-1">Contact</span>
+</div>
+<div class="flex flex-col items-center justify-center text-[#FF4D00] bg-[#FF4D00]/10 rounded-xl px-3 py-1 active:scale-90 transition-all duration-150">
+<span class="material-symbols-outlined text-xl" data-icon="movie">movie</span>
+<span class="font-['Inter'] text-[10px] font-bold uppercase tracking-[0.05em] mt-1">VibeMP4</span>
+</div>
+</nav>
+<!-- Floating Actions -->
+<div class="fixed bottom-24 right-6 flex flex-col gap-3 z-[100] md:bottom-6">
+<button class="w-12 h-12 glass-card rounded-full flex items-center justify-center shadow-lg border border-white/20 hover:scale-110 transition-transform">
+<span class="material-symbols-outlined text-on-surface" data-icon="dark_mode">dark_mode</span>
+</button>
+<button class="w-12 h-12 vibe-gradient text-white rounded-full flex items-center justify-center shadow-lg hover:scale-110 transition-transform">
+<span class="material-symbols-outlined" data-icon="question_mark">question_mark</span>
+</button>
+</div>
+</body></html>

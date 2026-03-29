@@ -1,0 +1,291 @@
+<!DOCTYPE html>
+
+<html class="light" lang="en"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>VibeTrim - Premium YouTube to MP3 Converter</title>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800;900&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<script id="tailwind-config">
+      tailwind.config = {
+        darkMode: "class",
+        theme: {
+          extend: {
+            colors: {
+              "on-secondary": "#ffffff",
+              "secondary": "#FF4D00",
+              "primary-fixed": "#dce2f7",
+              "background": "#f8f9fa",
+              "primary-container": "#141b2b",
+              "inverse-on-surface": "#f0f1f2",
+              "tertiary": "#000000",
+              "tertiary-container": "#002113",
+              "on-secondary-fixed-variant": "#B31E00",
+              "error-container": "#ffdad6",
+              "secondary-fixed": "#ffdad4",
+              "inverse-primary": "#c0c6db",
+              "on-error-container": "#93000a",
+              "secondary-container": "#FF775C",
+              "on-tertiary-fixed-variant": "#005236",
+              "surface-container-high": "#e7e8e9",
+              "on-primary": "#ffffff",
+              "on-primary-container": "#7d8497",
+              "on-tertiary": "#ffffff",
+              "surface-variant": "#e1e3e4",
+              "secondary-fixed-dim": "#ffb4a8",
+              "on-error": "#ffffff",
+              "on-surface": "#191c1d",
+              "error": "#ba1a1a",
+              "inverse-surface": "#2e3132",
+              "on-secondary-container": "#fffbff",
+              "on-secondary-fixed": "#410000",
+              "surface-dim": "#d9dadb",
+              "surface-container-low": "#f3f4f5",
+              "surface-container-highest": "#e1e3e4",
+              "on-background": "#191c1d",
+              "surface-container": "#edeeef",
+              "on-tertiary-container": "#FF4D00",
+              "primary-fixed-dim": "#c0c6db",
+              "surface-tint": "#575e70",
+              "surface": "#f8f9fa",
+              "tertiary-fixed-dim": "#4edea3",
+              "on-primary-fixed-variant": "#404758",
+              "on-tertiary-fixed": "#002113",
+              "surface-bright": "#f8f9fa",
+              "on-surface-variant": "#4c4546",
+              "tertiary-fixed": "#6ffbbe",
+              "outline-variant": "#cfc4c5",
+              "primary": "#000000",
+              "surface-container-lowest": "#ffffff",
+              "outline": "#7e7576",
+              "on-primary-fixed": "#141b2b"
+            },
+            fontFamily: {
+              "headline": ["Inter"],
+              "body": ["Inter"],
+              "label": ["Inter"]
+            },
+            borderRadius: {"DEFAULT": "0.5rem", "lg": "0.5rem", "xl": "0.75rem", "full": "9999px"},
+          },
+        },
+      }
+    </script>
+<style>
+        .material-symbols-outlined {
+            font-variation-settings: 'FILL' 0, 'wght' 400, 'GRAD' 0, 'opsz' 24;
+            vertical-align: middle;
+        }
+        .glass-panel {
+            background: rgba(255, 255, 255, 0.7);
+            backdrop-filter: blur(12px);
+            -webkit-backdrop-filter: blur(12px);
+        }
+    </style>
+<style>
+        body {
+            min-height: max(884px, 100dvh);
+        }
+        .brand-gradient {
+            background: linear-gradient(to right, #B31E00, #FF775C);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+        }
+    </style>
+</head>
+<body class="bg-background font-body text-on-surface selection:bg-secondary/20 selection:text-secondary">
+<!-- TopAppBar -->
+<header class="fixed top-0 w-full z-50 flex justify-between items-center px-6 py-4 max-w-full bg-[#0C0E10] dark:bg-[#0C0E10] shadow-[0_20px_40px_rgba(12,14,16,0.04)]">
+<div class="text-xl font-black flex items-center gap-2 brand-gradient italic uppercase tracking-tight">
+<span class="material-symbols-outlined text-[#FF4D00]" style="font-size: 32px;">waves</span>
+<span>VibeTrim</span>
+</div>
+<nav class="hidden md:flex items-center gap-8">
+<a class="text-[#ACADAF] hover:text-[#FF775C] transition-colors duration-300 text-sm font-medium uppercase tracking-widest" href="#">FAQs</a>
+<a class="text-[#ACADAF] hover:text-[#FF775C] transition-colors duration-300 text-sm font-medium uppercase tracking-widest" href="#">Changelog</a>
+<a class="text-[#ACADAF] hover:text-[#FF775C] transition-colors duration-300 text-sm font-medium uppercase tracking-widest" href="#">Contact</a>
+<a class="text-[#ACADAF] hover:text-[#FF775C] transition-colors duration-300 text-sm font-medium uppercase tracking-widest" href="#">VibeMP4</a>
+</nav>
+<div class="flex items-center gap-4">
+<button class="text-[#ACADAF] hover:text-[#FF775C] transition-colors p-2 rounded-lg hover:bg-white/10 active:scale-95 duration-200">
+<span class="material-symbols-outlined">menu</span>
+</button>
+</div>
+</header>
+<main class="pt-24 pb-20 px-4 md:px-10 max-w-5xl mx-auto">
+<!-- Premium Banner -->
+<div class="mb-10 p-4 bg-secondary/10 border border-secondary/20 rounded-xl flex flex-col md:flex-row items-center justify-between gap-4">
+<div class="flex items-center gap-3">
+<span class="material-symbols-outlined text-secondary">bookmark</span>
+<p class="text-on-surface font-medium text-sm">Please bookmark vibetrim.cc and Buy me a Coffee</p>
+</div>
+<button class="bg-gradient-to-r from-[#B31E00] to-[#FF775C] text-white px-5 py-2 rounded-lg text-sm font-bold hover:opacity-90 transition-all active:scale-95">
+            Support Project
+        </button>
+</div>
+<!-- Hero Section & Main Converter Card -->
+<section class="relative">
+<div class="text-center mb-12">
+<h1 class="text-4xl md:text-6xl font-black tracking-tight text-primary mb-4 leading-tight">
+                Kinetic Precision.
+            </h1>
+<p class="text-on-surface-variant text-lg max-w-2xl mx-auto font-light leading-relaxed">
+                Convert your favorite YouTube content into high-fidelity audio with surgical precision and zero clutter.
+            </p>
+</div>
+<!-- Main Converter UI -->
+<div class="bg-surface-container-lowest rounded-xl shadow-2xl shadow-black/5 p-6 md:p-10 border border-outline-variant/10">
+<div class="space-y-6">
+<!-- URL Input Container -->
+<div class="relative group">
+<div class="absolute inset-y-0 left-5 flex items-center pointer-events-none">
+<span class="material-symbols-outlined text-outline">link</span>
+</div>
+<input class="w-full bg-surface-container-highest border-none rounded-xl py-5 pl-14 pr-6 text-on-surface placeholder:text-outline focus:ring-2 focus:ring-secondary/20 focus:bg-surface-container-lowest transition-all duration-300 text-lg" placeholder="Please paste the YouTube video URL here" type="text"/>
+</div>
+<!-- Actions Row -->
+<div class="flex flex-col md:flex-row items-center justify-between gap-4">
+<div class="flex items-center gap-3 w-full md:w-auto">
+<button class="p-4 bg-surface-container-high text-on-surface rounded-xl hover:bg-surface-variant transition-colors group" title="Trim Video">
+<span class="material-symbols-outlined group-hover:rotate-12 transition-transform">content_cut</span>
+</button>
+<div class="flex items-center gap-2 bg-surface-container-high px-4 py-4 rounded-xl">
+<span class="material-symbols-outlined text-sm text-outline">high_quality</span>
+<span class="font-bold text-sm tracking-widest text-on-surface">128K</span>
+</div>
+</div>
+<button class="w-full md:w-64 bg-gradient-to-r from-[#B31E00] to-[#FF775C] text-white py-4 rounded-xl font-bold flex items-center justify-center gap-2 hover:opacity-90 transition-all active:scale-95 shadow-lg shadow-secondary/20">
+                        Convert
+                        <span class="material-symbols-outlined">bolt</span>
+</button>
+</div>
+</div>
+</div>
+</section>
+<!-- Secondary Actions Bento -->
+<section class="mt-10 grid grid-cols-1 md:grid-cols-3 gap-6">
+<!-- Discord CTA -->
+<div class="md:col-span-2 bg-surface-container-low rounded-xl p-6 flex items-center justify-between border border-outline-variant/10">
+<div class="flex items-center gap-4">
+<div class="w-12 h-12 bg-indigo-600 rounded-lg flex items-center justify-center text-white shadow-lg">
+<span class="material-symbols-outlined">forum</span>
+</div>
+<div>
+<h3 class="font-bold text-on-surface">VibeTrim Community</h3>
+<p class="text-sm text-on-surface-variant">Get support &amp; updates on Discord</p>
+</div>
+</div>
+<button class="bg-[#0C0E10] text-white px-6 py-2.5 rounded-lg font-bold text-sm hover:bg-black transition-colors">
+                Vibe Gang
+            </button>
+</div>
+<!-- Coffee Tip -->
+<div class="bg-surface-container-low rounded-xl p-6 flex flex-col justify-center gap-4 border border-outline-variant/10">
+<button class="w-full bg-[#B31E00] text-white py-3 rounded-lg font-bold text-sm flex items-center justify-center gap-2 hover:opacity-90 transition-all">
+<span class="material-symbols-outlined text-lg">coffee</span>
+                Buy me a coffee
+            </button>
+</div>
+</section>
+<!-- Quick Links -->
+<section class="mt-6 flex flex-wrap gap-4 justify-center md:justify-start">
+<button class="bg-surface-container-high hover:bg-surface-variant text-on-surface px-6 py-3 rounded-xl font-bold text-xs uppercase tracking-widest flex items-center gap-2 transition-colors">
+<span class="material-symbols-outlined text-lg">currency_bitcoin</span>
+            Donate via crypto
+        </button>
+<button class="bg-surface-container-high hover:bg-surface-variant text-on-surface px-6 py-3 rounded-xl font-bold text-xs uppercase tracking-widest flex items-center gap-2 transition-colors">
+<span class="material-symbols-outlined text-lg">movie</span>
+            Video Downloader
+        </button>
+</section>
+<!-- Instructions Section -->
+<section class="mt-20">
+<div class="flex items-center gap-4 mb-10">
+<div class="h-px flex-1 bg-outline-variant/20"></div>
+<h2 class="text-xs font-black uppercase tracking-[0.3em] text-outline">How it works</h2>
+<div class="h-px flex-1 bg-outline-variant/20"></div>
+</div>
+<div class="grid grid-cols-1 md:grid-cols-3 gap-x-12 gap-y-16">
+<div class="space-y-3">
+<div class="text-3xl font-black text-secondary/10">01</div>
+<h4 class="font-bold text-on-surface">Copy YouTube URL</h4>
+<p class="text-sm text-on-surface-variant leading-relaxed">Navigate to YouTube and copy the direct link of the video you want to curate into your collection.</p>
+</div>
+<div class="space-y-3">
+<div class="text-3xl font-black text-secondary/10">02</div>
+<h4 class="font-bold text-on-surface">Paste in Input</h4>
+<p class="text-sm text-on-surface-variant leading-relaxed">Insert the link into our premium input field. We support all standard YouTube formats.</p>
+</div>
+<div class="space-y-3">
+<div class="text-3xl font-black text-secondary/10">03</div>
+<h4 class="font-bold text-on-surface">Select Quality</h4>
+<p class="text-sm text-on-surface-variant leading-relaxed">Choose your preferred bitrate. Our default 128k ensures perfect balance between size and quality.</p>
+</div>
+<div class="space-y-3">
+<div class="text-3xl font-black text-secondary/10">04</div>
+<h4 class="font-bold text-on-surface">Optional Trimming</h4>
+<p class="text-sm text-on-surface-variant leading-relaxed">Use the scissors tool if you only need a specific portion of the audio track.</p>
+</div>
+<div class="space-y-3">
+<div class="text-3xl font-black text-secondary/10">05</div>
+<h4 class="font-bold text-on-surface">Hit Convert</h4>
+<p class="text-sm text-on-surface-variant leading-relaxed">Our servers process your request instantly using high-performance conversion nodes.</p>
+</div>
+<div class="space-y-3">
+<div class="text-3xl font-black text-secondary/10">06</div>
+<h4 class="font-bold text-on-surface">Cloud Processing</h4>
+<p class="text-sm text-on-surface-variant leading-relaxed">Wait a few seconds while we extract the highest quality audio stream available.</p>
+</div>
+<div class="space-y-3">
+<div class="text-3xl font-black text-secondary/10">07</div>
+<h4 class="font-bold text-on-surface">Instant Download</h4>
+<p class="text-sm text-on-surface-variant leading-relaxed">Once ready, a direct download link will appear. No ads, no redirects, just your file.</p>
+</div>
+<div class="space-y-3">
+<div class="text-3xl font-black text-secondary/10">08</div>
+<h4 class="font-bold text-on-surface">Listen Anywhere</h4>
+<p class="text-sm text-on-surface-variant leading-relaxed">Files are standard MP3, compatible with every modern device and media player.</p>
+</div>
+<div class="space-y-3">
+<div class="text-3xl font-black text-secondary/10">09</div>
+<h4 class="font-bold text-on-surface">Spread the Word</h4>
+<p class="text-sm text-on-surface-variant leading-relaxed">Help us stay ad-free by bookmarking the site and sharing it with your friends.</p>
+</div>
+</div>
+</section>
+</main>
+<!-- Footer -->
+<footer class="w-full mt-auto flex flex-col md:flex-row justify-between items-center px-6 pt-12 pb-24 border-t border-[#ACADAF]/10 bg-[#F6F6F8] dark:bg-[#0C0E10] text-xs font-medium text-[#5A5C5D]">
+<div class="text-[#5A5C5D] mb-6 md:mb-0">
+        © 2024 <span class="font-black text-[#FF4D00]">VibeTrim</span>. Kinetic Precision.
+    </div>
+<div class="flex gap-8">
+<a class="text-[#5A5C5D] hover:text-[#2D2F31] transition-opacity underline underline-offset-4" href="#">Privacy Policy</a>
+<a class="text-[#5A5C5D] hover:text-[#2D2F31] transition-opacity underline underline-offset-4" href="#">Terms of Service</a>
+<a class="text-[#5A5C5D] hover:text-[#2D2F31] transition-opacity underline underline-offset-4" href="#">Buy me a coffee</a>
+</div>
+</footer>
+<!-- BottomNavBar for Mobile (Component Integration) -->
+<nav class="fixed bottom-0 left-0 w-full flex justify-around items-center px-4 py-3 bg-[#F6F6F8]/80 dark:bg-[#0C0E10]/80 backdrop-blur-xl border-t border-[#ACADAF]/15 z-50 rounded-t-2xl md:hidden">
+<a class="flex flex-col items-center justify-center text-[#5A5C5D] dark:text-[#ACADAF] active:scale-90 transition-all duration-150" href="#">
+<span class="material-symbols-outlined">help_outline</span>
+<span class="font-['Inter'] text-[10px] font-bold uppercase tracking-[0.05em] mt-1">FAQs</span>
+</a>
+<a class="flex flex-col items-center justify-center text-[#5A5C5D] dark:text-[#ACADAF] active:scale-90 transition-all duration-150" href="#">
+<span class="material-symbols-outlined">history_edu</span>
+<span class="font-['Inter'] text-[10px] font-bold uppercase tracking-[0.05em] mt-1">Updates</span>
+</a>
+<a class="flex flex-col items-center justify-center text-[#5A5C5D] dark:text-[#ACADAF] active:scale-90 transition-all duration-150" href="#">
+<span class="material-symbols-outlined">mail</span>
+<span class="font-['Inter'] text-[10px] font-bold uppercase tracking-[0.05em] mt-1">Contact</span>
+</a>
+<a class="flex flex-col items-center justify-center text-[#FF4D00] bg-[#FF4D00]/10 rounded-xl px-3 py-1 active:scale-90 transition-all duration-150" href="#">
+<span class="material-symbols-outlined">movie</span>
+<span class="font-['Inter'] text-[10px] font-bold uppercase tracking-[0.05em] mt-1">VibeMP4</span>
+</a>
+</nav>
+<!-- Dark Mode Toggle Floating -->
+<button class="fixed bottom-20 right-8 w-14 h-14 glass-panel rounded-full shadow-2xl flex items-center justify-center border border-white/20 hover:scale-110 active:scale-95 transition-all z-[70]">
+<span class="material-symbols-outlined text-[#FF4D00]">dark_mode</span>
+</button>
+</body></html>

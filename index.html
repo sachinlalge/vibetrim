@@ -1,0 +1,267 @@
+<!DOCTYPE html>
+<html lang="en" class="light border-box">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>VibeTrim - Premium YouTube to MP3 Converter</title>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800;900&display=swap" rel="stylesheet" />
+    <link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&display=swap" rel="stylesheet" />
+  </head>
+  <body>
+    <!-- Header -->
+    <header class="header">
+      <div class="brand">
+        <span class="material-symbols-outlined logo-icon">waves</span>
+        <span class="brand-text">VibeTrim</span>
+      </div>
+      <nav class="desktop-nav">
+        <a href="#">FAQs</a>
+        <a href="#">Changelog</a>
+        <a href="#">Contact</a>
+        <a href="#">VibeMP4</a>
+      </nav>
+      <div class="mobile-menu-btn">
+        <button aria-label="Menu" class="icon-btn">
+          <span class="material-symbols-outlined">menu</span>
+        </button>
+      </div>
+    </header>
+
+    <!-- Main Content -->
+    <main class="main-content">
+      <!-- Premium Banner -->
+      <div class="premium-banner">
+        <div class="banner-text">
+          <span class="material-symbols-outlined banner-icon">bookmark</span>
+          <p>Please bookmark vibetrim.cc and Buy me a Coffee</p>
+        </div>
+        <button class="btn btn-primary banner-btn">Support Project</button>
+      </div>
+
+      <!-- Hero Section -->
+      <section class="hero-section">
+        <h1 class="hero-title">Kinetic Precision.</h1>
+        <p class="hero-desc">Convert your favorite YouTube content into high-fidelity audio with surgical precision and zero clutter.</p>
+
+        <!-- Converter Card -->
+        <div class="converter-card">
+          <!-- Input State -->
+          <div id="input-state">
+            <div class="input-container">
+              <span class="material-symbols-outlined input-icon">link</span>
+              <input type="text" id="youtube-url-input" class="url-input" placeholder="Please paste the YouTube video URL here" />
+            </div>
+
+            <div class="action-row">
+              <div class="action-controls">
+                <button class="btn action-btn-secondary" title="Trim Video">
+                  <span class="material-symbols-outlined hover-rotate">content_cut</span>
+                </button>
+                <div class="quality-badge">
+                  <span class="material-symbols-outlined quality-icon">high_quality</span>
+                  <span class="quality-text">128K</span>
+                </div>
+              </div>
+              <button id="convert-submit-btn" class="btn convert-btn">
+                Convert
+                <span class="material-symbols-outlined">bolt</span>
+              </button>
+            </div>
+          </div>
+
+          <!-- Converting State (Hidden initially) -->
+          <div id="converting-state" style="display: none;" class="state-container">
+            <div class="input-container disabled-input">
+              <span class="material-symbols-outlined input-icon">link</span>
+              <input type="text" class="url-input disabled-input-field" value="https://www.youtube.com/watch?v=dQw4w9WgXcQ" disabled />
+            </div>
+            
+            <div class="processing-visualizer">
+              <div class="waveform-anim-container">
+                <div class="waveform-bar" style="animation-delay: 0.1s;"></div>
+                <div class="waveform-bar" style="animation-delay: 0.3s;"></div>
+                <div class="waveform-bar" style="animation-delay: 0.2s;"></div>
+                <div class="waveform-bar" style="animation-delay: 0.5s;"></div>
+                <div class="waveform-bar" style="animation-delay: 0.4s;"></div>
+                <div class="waveform-bar" style="animation-delay: 0.6s;"></div>
+                <div class="waveform-bar" style="animation-delay: 0.3s;"></div>
+                <div class="waveform-bar" style="animation-delay: 0.7s;"></div>
+              </div>
+              <div class="progress-text">
+                <h2>Converting...</h2>
+                <p>Estimated time: few seconds</p>
+              </div>
+              <div class="progress-bar-container">
+                <div class="progress-fill"></div>
+              </div>
+              <button id="cancel-btn" class="btn action-btn-secondary">Cancel Process</button>
+            </div>
+          </div>
+
+          <!-- Success State (Hidden initially) -->
+          <div id="success-state" style="display: none;" class="state-container success-container">
+            <div class="success-icon-wrap">
+              <span class="material-symbols-outlined" style="font-variation-settings: 'FILL' 1;">check_circle</span>
+            </div>
+            <h2 class="success-title">Successfully converted!</h2>
+            <p class="success-meta">128KBPS • 4.2 MB • MP3</p>
+            
+            <div class="static-waveform">
+              <div class="static-wave h-6"></div>
+              <div class="static-wave h-8"></div>
+              <div class="static-wave h-4"></div>
+              <div class="static-wave h-10"></div>
+              <div class="static-wave h-6"></div>
+              <div class="static-wave h-8"></div>
+              <div class="static-wave h-5"></div>
+              <div class="static-wave h-9"></div>
+              <div class="static-wave h-7"></div>
+              <div class="static-wave h-3"></div>
+              <div class="static-wave h-8"></div>
+              <div class="static-wave h-10"></div>
+              <div class="static-wave h-6"></div>
+            </div>
+
+            <div class="success-actions">
+              <button id="download-btn" class="btn btn-primary">
+                <span class="material-symbols-outlined">download</span> Download MP3
+              </button>
+              <button id="convert-next-btn" class="btn action-btn-secondary">
+                <span class="material-symbols-outlined">refresh</span> Convert Next
+              </button>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <!-- Secondary Actions Grid -->
+      <section class="secondary-actions">
+        <div class="bento-box discord-cta">
+          <div class="bento-info">
+            <div class="discord-icon">
+              <span class="material-symbols-outlined">forum</span>
+            </div>
+            <div>
+              <h3>VibeTrim Community</h3>
+              <p>Get support & updates on Discord</p>
+            </div>
+          </div>
+          <button class="btn btn-dark">Vibe Gang</button>
+        </div>
+        
+        <div class="bento-box coffee-tip">
+          <button class="btn btn-coffee">
+            <span class="material-symbols-outlined">coffee</span>
+            Buy me a coffee
+          </button>
+        </div>
+      </section>
+
+      <!-- Quick Links -->
+      <section class="quick-links">
+        <button class="btn quick-btn">
+          <span class="material-symbols-outlined">currency_bitcoin</span> Donate via crypto
+        </button>
+        <button class="btn quick-btn">
+          <span class="material-symbols-outlined">movie</span> Video Downloader
+        </button>
+      </section>
+
+      <!-- Instructions Section -->
+      <section class="instructions-section">
+        <div class="stage-divider">
+          <div class="line"></div>
+          <h2>HOW IT WORKS</h2>
+          <div class="line"></div>
+        </div>
+
+        <div class="instructions-grid">
+          <div class="instruction-step">
+            <div class="step-num">01</div>
+            <h4>Copy YouTube URL</h4>
+            <p>Navigate to YouTube and copy the direct link of the video you want to curate into your collection.</p>
+          </div>
+          <div class="instruction-step">
+            <div class="step-num">02</div>
+            <h4>Paste in Input</h4>
+            <p>Insert the link into our premium input field. We support all standard YouTube formats.</p>
+          </div>
+          <div class="instruction-step">
+            <div class="step-num">03</div>
+            <h4>Select Quality</h4>
+            <p>Choose your preferred bitrate. Our default 128k ensures perfect balance between size and quality.</p>
+          </div>
+          <div class="instruction-step">
+            <div class="step-num">04</div>
+            <h4>Optional Trimming</h4>
+            <p>Use the scissors tool if you only need a specific portion of the audio track.</p>
+          </div>
+          <div class="instruction-step">
+            <div class="step-num">05</div>
+            <h4>Hit Convert</h4>
+            <p>Our servers process your request instantly using high-performance conversion nodes.</p>
+          </div>
+          <div class="instruction-step">
+            <div class="step-num">06</div>
+            <h4>Cloud Processing</h4>
+            <p>Wait a few seconds while we extract the highest quality audio stream available.</p>
+          </div>
+          <div class="instruction-step">
+            <div class="step-num">07</div>
+            <h4>Instant Download</h4>
+            <p>Once ready, a direct download link will appear. No ads, no redirects, just your file.</p>
+          </div>
+          <div class="instruction-step">
+            <div class="step-num">08</div>
+            <h4>Listen Anywhere</h4>
+            <p>Files are standard MP3, compatible with every modern device and media player.</p>
+          </div>
+          <div class="instruction-step">
+            <div class="step-num">09</div>
+            <h4>Spread the Word</h4>
+            <p>Help us stay ad-free by bookmarking the site and sharing it with your friends.</p>
+          </div>
+        </div>
+      </section>
+    </main>
+
+    <!-- Footer -->
+    <footer class="footer">
+      <div class="copyright">
+        © 2024 <span class="brand-highlight">VibeTrim</span>. Kinetic Precision.
+      </div>
+      <div class="footer-links">
+        <a href="#">Privacy Policy</a>
+        <a href="#">Terms of Service</a>
+        <a href="#">Buy me a coffee</a>
+      </div>
+    </footer>
+
+    <!-- Mobile Bottom Nav -->
+    <nav class="mobile-nav">
+      <a href="#" class="nav-item">
+        <span class="material-symbols-outlined">help_outline</span>
+        <span class="nav-text">FAQs</span>
+      </a>
+      <a href="#" class="nav-item">
+        <span class="material-symbols-outlined">history_edu</span>
+        <span class="nav-text">Updates</span>
+      </a>
+      <a href="#" class="nav-item">
+        <span class="material-symbols-outlined">mail</span>
+        <span class="nav-text">Contact</span>
+      </a>
+      <a href="#" class="nav-item active-nav">
+        <span class="material-symbols-outlined">movie</span>
+        <span class="nav-text">VibeMP4</span>
+      </a>
+    </nav>
+
+    <!-- Dark Mode Toggle -->
+    <button class="btn-dark-mode glass-panel" id="theme-toggle">
+      <span class="material-symbols-outlined" id="theme-icon">dark_mode</span>
+    </button>
+
+    <script type="module" src="/src/main.js"></script>
+  </body>
+</html>
