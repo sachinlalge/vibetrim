@@ -1,2 +1,11 @@
+[phases.setup]
+nixPkgs = ["nodejs-22_x"]
+
 [phases.install]
-cmds = ["rm -f package-lock.json", "npm install"]
+cmds = ["npm install"]
+
+[phases.build]
+cmds = ["echo 'no build step'"]
+
+[start]
+cmd = "node server.js"
