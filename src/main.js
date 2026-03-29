@@ -1,5 +1,7 @@
 import './style.css'
 
+const API_BASE = 'https://vibetrim-production.up.railway.app';
+
 document.addEventListener('DOMContentLoaded', () => {
   // ─── Theme Toggle ──────────────────────────────────────────────
   const themeToggle = document.getElementById('theme-toggle');
@@ -101,7 +103,7 @@ document.addEventListener('DOMContentLoaded', () => {
       progressFill.style.width = '10%';
       if (progressTextP) progressTextP.textContent = 'Fetching video info...';
 
-      const infoRes = await fetch(`/api/info?url=${encodeURIComponent(url)}`, {
+      const infoRes = await fetch(`${API_BASE}/api/info?url=${encodeURIComponent(url)}`, {
         signal: abortController.signal,
       });
 
@@ -124,7 +126,7 @@ document.addEventListener('DOMContentLoaded', () => {
         progressFill.style.width = `${progress}%`;
       }, 800);
 
-      const downloadRes = await fetch(`/api/download?url=${encodeURIComponent(url)}`, {
+      const downloadRes = await fetch(`${API_BASE}/api/download?url=${encodeURIComponent(url)}`, {
         signal: abortController.signal,
       });
 
