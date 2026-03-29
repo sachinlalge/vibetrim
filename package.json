@@ -5,7 +5,7 @@
   "type": "module",
   "scripts": {
     "start": "node server.js",
-    "build": "echo 'skip build'"
+    "build": "echo skip"
   },
   "dependencies": {
     "@distube/ytdl-core": "^4.16.12",
@@ -14,6 +14,6 @@
     "ffmpeg-static": "^5.3.0"
   },
   "engines": {
-    "node": ">=22.14.0"
+    "node": ">=20"
   }
 }
